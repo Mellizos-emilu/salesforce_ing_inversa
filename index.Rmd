@@ -31,6 +31,7 @@ Es una solución Saas (Software as a Service) para que instituciones o empresas,
 
 
 
+
 ![Arquitectura Salesforce](images/dar_version_arq.png)
 
 

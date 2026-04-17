@@ -1,8 +1,8 @@
-# Cross-references {#cross}
+# Salesforce
 
 Cross-references make it easier for your readers to find and link to elements in your book.
 
-## Chapters and sub-chapters
+## Integrarse
 
 There are two steps to cross-reference any heading:
 
