@@ -18,7 +18,17 @@ github-repo: rstudio/bookdown-demo
 # Bienvenido
 
 Esta es una iniciativa en donde es una investigación y análisis de como funciona la plataforma **Salesforce**.
-This is a _sample_ book written in **Markdown**. You can use anything that Pandoc's Markdown supports; for example, a math equation $a^2 + b^2 = c^2$.
+Esta versión se ha comenzado el 17-04-2026. 
+
+El objetivo es tratar de explicar en simple lo que es Salesforce, y animar a que más profesionales aprendan y practiquen con casos reales como funciona la plataforma.
+
+## ¿ Que es Salesforce?
+
+Es una solución Saas (Software as a Service) para que instituciones o empresas, puedan gestionar la Venta y Postventa de los clientes en una plataforma centralizada.
+
+
+-> Aquí incorporar el dibujo general de una ciudad con edificios que utilizan Salesforce.
+
 
 
 ![Arquitectura Salesforce](images/dar_version_arq.png)
@@ -39,6 +49,13 @@ Use second-level and higher headings within chapters like: `## A short section` 
 The `index.Rmd` file is required, and is also your first book chapter. It will be the homepage when you render the book.
 
 ## Render book
+
+![](images/ESTADO_DEL_ARTE.svg){width="900"}
+
+```{r echo=FALSE, fig.cap="Diagrama de arquitectura de Salesforce", out.width="100%"}
+knitr::include_graphics("images/ESTADO_DEL_ARTE.svg")
+```
+
 
 You can render the HTML version of this example book without changing anything:
 
