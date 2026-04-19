@@ -21,13 +21,13 @@ Esta es una iniciativa de investigación y análisis de como funciona la platafo
 
 El objetivo es tratar de explicar en simple lo que es Salesforce, y animar a que más profesionales aprendan y practiquen con casos reales como funciona la plataforma.
 
-## Contexto de Salesforce
+## Contexto {-}
 
 Salesforce es una solución Saas (Software as a Service) para que instituciones o empresas, puedan gestionar la Venta y Postventa de los clientes en una plataforma centralizada.
 
 En el contexto latinoamericano, cada vez mas instituciones están incorporando la plataforma a las empresas en donde se está requiriendo cada vez más profesionales dedicados a administrar la plataforma.
 
-## ¿ Qué es Salesforce ?
+## ¿ Qué es Salesforce ? {-}
 
 Si no te ha tocado trabajar con la plataforma, uno ingresa a una página web con usuario y contraseña, y verás algo similar a lo siguiente:
 
@@ -37,7 +37,6 @@ Si no te ha tocado trabajar con la plataforma, uno ingresa a una página web con
 
 La manera que explicaremos Salesforce se muestra en el siguiente diagrama:
 
-
 ```{r echo=FALSE, fig.cap="Diagrama de arquitectura de Salesforce", out.width="100%"}
 knitr::include_graphics("images/Diagrama_Base.png")
 ```
@@ -45,8 +44,6 @@ knitr::include_graphics("images/Diagrama_Base.png")
 Lo anterior hace referencia que Salesforce , está conformado por diferentes capas para que funcione y el usuario final pueda navegar en los flujos guiados y gestionar el Pipeline de Negocio.
 
 En los siguientes capítulos se irá trabajando capa por capa para poder entender como funciona y poder generar conocimiento y aplicarlo a los contextos de negocio.
-
-
 
 ```{r eval=FALSE}
 bookdown::serve_book()

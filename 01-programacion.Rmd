@@ -9,5 +9,3 @@ Porque está alineado con los contextos Cloud, tiene paquetes para una infinidad
 ## Salesforce + R + "Cloud"
 
 El principio base es que para dominar algún área hay que ampliar el vocabulario y el objetivo es ir generando conocimiento. Este conocimiento visto como un lenguaje que se utiliza en este contexto técnico para poder desembolverse de mejor manera.
-
-
