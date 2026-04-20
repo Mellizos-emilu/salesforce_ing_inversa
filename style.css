@@ -12,3 +12,12 @@ pre {
 pre code {
   white-space: inherit;
 }
+/* Ampliar el ancho máximo del contenedor principal del libro */
+.book .book-body .page-wrapper .page-inner {
+  max-width: 80% !important; /* Puedes cambiar esto a 100% o 1200px según tu gusto */
+}
+
+/* Asegurar que las secciones de texto usen todo el nuevo espacio disponible */
+.book-body .page-wrapper .page-inner section.normal {
+  max-width: 80% !important;
+}
