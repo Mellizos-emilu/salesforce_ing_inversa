@@ -129,3 +129,22 @@ datatable(df_render,
           ),
           caption = "Tipos de metadatos encontrados en la Org")
 ```
+
+
+Aquí ya comenzamos a hacer los primeros resúmenes:
+
+```{r}
+df_render %>% 
+  group_by(inFolder,metaFile) %>% 
+  summarise(
+    Total = n()
+  ) 
+
+df_render %>% filter(!is.na(childXmlNames)) 
+
+
+```
+
+que significa que un xmlName tenga childXmlNames?
+| childXmlNames | string[] | List of child sub-components for this component. |
+
