@@ -37,7 +37,7 @@ Si no te ha tocado trabajar con la plataforma, uno ingresa a una página web con
 
 La manera que explicaremos Salesforce se muestra en el siguiente diagrama:
 
-```{r echo=FALSE, fig.cap="Diagrama de arquitectura de Salesforce", out.width="100%"}
+```{r echo=FALSE, fig.cap="Diagrama de arquitectura de Salesforce", out.width="80%"}
 knitr::include_graphics("images/Diagrama_Base.png")
 ```
 
