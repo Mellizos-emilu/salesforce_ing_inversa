@@ -113,11 +113,15 @@ sf_metadata <- sf_describe_metadata(verbose = TRUE) %>%
 head(sf_metadata)
 ```
 
-```{r}
+```{r importar_data, echo=FALSE}
 library(DT)
 # Leemos el archivo procesado localmente
 df_render <- readRDS("data/sf_metadata_describe.rds")
 
+
+```
+
+```{r eval=TRUE}
 # Mostramos toda la tabla de forma interactiva (10 filas por página, con filtros)
 datatable(df_render, 
           rownames = FALSE, 
@@ -130,21 +134,53 @@ datatable(df_render,
           caption = "Tipos de metadatos encontrados en la Org")
 ```
 
-
-Aquí ya comenzamos a hacer los primeros resúmenes:
-
-```{r}
-df_render %>% 
-  group_by(inFolder,metaFile) %>% 
-  summarise(
-    Total = n()
-  ) 
-
-df_render %>% filter(!is.na(childXmlNames)) 
-
-
-```
-
 que significa que un xmlName tenga childXmlNames?
 | childXmlNames | string[] | List of child sub-components for this component. |
+
+
+
+## Codigo Fuente
+
+### lwc
+
+1. Primero cargue los Recipe de LWC de salesforce a la playground.
+
+```{r descargar_lwc, eval=FALSE}
+### LightningComponentBundle
+## --- Armamos queries para hacer el llamado
+metada_query_LightningComponentBundle <- list(
+    list(type = 'LightningComponentBundle')
+)
+
+## --- Realizamos llamado para extraer la metadata
+metada_list_LightningComponentBundle <- sf_list_metadata(
+    queries = metada_query_LightningComponentBundle
+)
+```
+
+```{r guardar_lwc, eval=FALSE}
+# 2. Guardamos el data frame en la carpeta data
+saveRDS(metada_list_LightningComponentBundle, "data/sf_metadata_lwc.rds")
+```
+
+
+
+```{r mostrar_lwc}
+library(DT)
+
+# Leemos el archivo previamente guardado de forma local
+df_lwc <- readRDS("data/sf_metadata_lwc.rds")
+
+# Mostramos la tabla interactiva
+datatable(df_lwc, 
+          rownames = FALSE, 
+          filter = 'top', 
+          options = list(
+            pageLength = 10, 
+            autoWidth = TRUE,
+            scrollX = TRUE
+          ),
+          caption = "Listado de Lightning Component Bundles (LWC)")
+
+```
 

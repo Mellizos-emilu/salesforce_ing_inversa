@@ -1,0 +1,46 @@
+# Retrieve
+
+## lwc
+
+```{r}
+retrieve_request <- list(
+  unpackaged = list(
+    # Primer bloque de tipos
+    types = list(
+      members = '*',
+      name = 'LightningComponentBundle'
+    ),
+    # Segundo bloque de tipos (Nota cómo repetimos el nombre "types =")
+    types = list(
+      members = '*',
+      name = 'ApexClass'
+    ),
+    # Tercer bloque de tipos
+    types = list(
+      members = '*',
+      name = 'AuraDefinitionBundle'
+    ),
+    # Finalmente, la versión
+    version = "64.0"
+  )
+)
+
+### LLAMADO AL RETRIEVE
+retrieve_info <- sf_retrieve_metadata(
+    retrieve_request = retrieve_request,
+    filename = "package.zip", 
+    verbose = TRUE
+)
+
+unzip(
+  zipfile = "package.zip",
+  exdir = "codigofuente/"
+)
+
+```
+
+
+```{powershell}
+# Busca un término en todos los archivos y subcarpetas
+Select-String -Path ".\codigofuente\*" -Pattern "contact" -Recurse
+```
