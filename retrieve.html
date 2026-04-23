@@ -4,13 +4,13 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Page not found | Salesforce|Studio</title>
+  <title>5 Retrieve | Salesforce|Studio</title>
   <meta name="description" content="<p>This is a minimal example of using the bookdown package to write a book.
 The HTML output format for this example is bookdown::gitbook,
 set in the _output.yml file.</p>" />
   <meta name="generator" content="bookdown 0.46 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="Page not found | Salesforce|Studio" />
+  <meta property="og:title" content="5 Retrieve | Salesforce|Studio" />
   <meta property="og:type" content="book" />
   
   <meta property="og:description" content="<p>This is a minimal example of using the bookdown package to write a book.
@@ -19,7 +19,7 @@ set in the _output.yml file.</p>" />
   <meta name="github-repo" content="rstudio/bookdown-demo" />
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Page not found | Salesforce|Studio" />
+  <meta name="twitter:title" content="5 Retrieve | Salesforce|Studio" />
   
   <meta name="twitter:description" content="<p>This is a minimal example of using the bookdown package to write a book.
 The HTML output format for this example is bookdown::gitbook,
@@ -36,8 +36,8 @@ set in the _output.yml file.</p>" />
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-
-
+<link rel="prev" href="admin-certification.html"/>
+<link rel="next" href="sharing-your-book.html"/>
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -247,11 +247,45 @@ div.csl-indent {
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="page-not-found" class="section level1">
-<h1>Page not found</h1>
-<p>The page you requested cannot be found (perhaps it was moved or renamed).</p>
-<p>You may want to try searching to find the page's new location, or use
-the table of contents to find the page you are looking for.</p>
+<div id="retrieve" class="section level1 hasAnchor" number="5">
+<h1><span class="header-section-number">5</span> Retrieve<a href="retrieve.html#retrieve" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<div id="lwc-1" class="section level2 hasAnchor" number="5.1">
+<h2><span class="header-section-number">5.1</span> lwc<a href="retrieve.html#lwc-1" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div class="sourceCode" id="cb14"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb14-1"><a href="retrieve.html#cb14-1" tabindex="-1"></a>retrieve_request <span class="ot">&lt;-</span> <span class="fu">list</span>(</span>
+<span id="cb14-2"><a href="retrieve.html#cb14-2" tabindex="-1"></a>  <span class="at">unpackaged =</span> <span class="fu">list</span>(</span>
+<span id="cb14-3"><a href="retrieve.html#cb14-3" tabindex="-1"></a>    <span class="co"># Primer bloque de tipos</span></span>
+<span id="cb14-4"><a href="retrieve.html#cb14-4" tabindex="-1"></a>    <span class="at">types =</span> <span class="fu">list</span>(</span>
+<span id="cb14-5"><a href="retrieve.html#cb14-5" tabindex="-1"></a>      <span class="at">members =</span> <span class="st">&#39;*&#39;</span>,</span>
+<span id="cb14-6"><a href="retrieve.html#cb14-6" tabindex="-1"></a>      <span class="at">name =</span> <span class="st">&#39;LightningComponentBundle&#39;</span></span>
+<span id="cb14-7"><a href="retrieve.html#cb14-7" tabindex="-1"></a>    ),</span>
+<span id="cb14-8"><a href="retrieve.html#cb14-8" tabindex="-1"></a>    <span class="co"># Segundo bloque de tipos (Nota cómo repetimos el nombre &quot;types =&quot;)</span></span>
+<span id="cb14-9"><a href="retrieve.html#cb14-9" tabindex="-1"></a>    <span class="at">types =</span> <span class="fu">list</span>(</span>
+<span id="cb14-10"><a href="retrieve.html#cb14-10" tabindex="-1"></a>      <span class="at">members =</span> <span class="st">&#39;*&#39;</span>,</span>
+<span id="cb14-11"><a href="retrieve.html#cb14-11" tabindex="-1"></a>      <span class="at">name =</span> <span class="st">&#39;ApexClass&#39;</span></span>
+<span id="cb14-12"><a href="retrieve.html#cb14-12" tabindex="-1"></a>    ),</span>
+<span id="cb14-13"><a href="retrieve.html#cb14-13" tabindex="-1"></a>    <span class="co"># Tercer bloque de tipos</span></span>
+<span id="cb14-14"><a href="retrieve.html#cb14-14" tabindex="-1"></a>    <span class="at">types =</span> <span class="fu">list</span>(</span>
+<span id="cb14-15"><a href="retrieve.html#cb14-15" tabindex="-1"></a>      <span class="at">members =</span> <span class="st">&#39;*&#39;</span>,</span>
+<span id="cb14-16"><a href="retrieve.html#cb14-16" tabindex="-1"></a>      <span class="at">name =</span> <span class="st">&#39;AuraDefinitionBundle&#39;</span></span>
+<span id="cb14-17"><a href="retrieve.html#cb14-17" tabindex="-1"></a>    ),</span>
+<span id="cb14-18"><a href="retrieve.html#cb14-18" tabindex="-1"></a>    <span class="co"># Finalmente, la versión</span></span>
+<span id="cb14-19"><a href="retrieve.html#cb14-19" tabindex="-1"></a>    <span class="at">version =</span> <span class="st">&quot;64.0&quot;</span></span>
+<span id="cb14-20"><a href="retrieve.html#cb14-20" tabindex="-1"></a>  )</span>
+<span id="cb14-21"><a href="retrieve.html#cb14-21" tabindex="-1"></a>)</span>
+<span id="cb14-22"><a href="retrieve.html#cb14-22" tabindex="-1"></a></span>
+<span id="cb14-23"><a href="retrieve.html#cb14-23" tabindex="-1"></a><span class="do">### LLAMADO AL RETRIEVE</span></span>
+<span id="cb14-24"><a href="retrieve.html#cb14-24" tabindex="-1"></a>retrieve_info <span class="ot">&lt;-</span> <span class="fu">sf_retrieve_metadata</span>(</span>
+<span id="cb14-25"><a href="retrieve.html#cb14-25" tabindex="-1"></a>    <span class="at">retrieve_request =</span> retrieve_request,</span>
+<span id="cb14-26"><a href="retrieve.html#cb14-26" tabindex="-1"></a>    <span class="at">filename =</span> <span class="st">&quot;package.zip&quot;</span>, </span>
+<span id="cb14-27"><a href="retrieve.html#cb14-27" tabindex="-1"></a>    <span class="at">verbose =</span> <span class="cn">TRUE</span></span>
+<span id="cb14-28"><a href="retrieve.html#cb14-28" tabindex="-1"></a>)</span>
+<span id="cb14-29"><a href="retrieve.html#cb14-29" tabindex="-1"></a></span>
+<span id="cb14-30"><a href="retrieve.html#cb14-30" tabindex="-1"></a><span class="fu">unzip</span>(</span>
+<span id="cb14-31"><a href="retrieve.html#cb14-31" tabindex="-1"></a>  <span class="at">zipfile =</span> <span class="st">&quot;package.zip&quot;</span>,</span>
+<span id="cb14-32"><a href="retrieve.html#cb14-32" tabindex="-1"></a>  <span class="at">exdir =</span> <span class="st">&quot;codigofuente/&quot;</span></span>
+<span id="cb14-33"><a href="retrieve.html#cb14-33" tabindex="-1"></a>)</span></code></pre></div>
+
+</div>
 </div>
 <script>
 
@@ -464,8 +498,8 @@ window.onload = function() {
           </div>
         </div>
       </div>
-
-
+<a href="admin-certification.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="sharing-your-book.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
@@ -496,7 +530,7 @@ gitbook.start({
     "size": 2
   },
   "edit": {
-    "link": "https://github.com/USERNAME/REPO/edit/BRANCH/%s",
+    "link": "https://github.com/USERNAME/REPO/edit/BRANCH/05-backend.Rmd",
     "text": "Edit"
   },
   "history": {

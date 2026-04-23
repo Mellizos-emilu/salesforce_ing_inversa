@@ -1,6 +1,4 @@
 fig:unnamed-chunk-2
-eq:binom
-thm:tri
 lenguaje-r
 porque-r
 salesforce-r-cloud
@@ -11,11 +9,11 @@ salesforce.org
 integración
 autenticación
 capas-metadata
+codigo-fuente
+lwc
 admin-certification
-blocks
-equations
-theorems-and-proofs
-callout-blocks
+retrieve
+lwc-1
 sharing-your-book
 publishing
 pages

@@ -29,7 +29,7 @@ set in the _output.yml file.</p>" />
 <meta name="author" content="Fernando Bahamóndez" />
 
 
-<meta name="date" content="2026-04-20" />
+<meta name="date" content="2026-04-23" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -37,7 +37,7 @@ set in the _output.yml file.</p>" />
   
   
 <link rel="prev" href="salesforce.html"/>
-<link rel="next" href="blocks.html"/>
+<link rel="next" href="retrieve.html"/>
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -205,13 +205,15 @@ div.csl-indent {
 <li class="chapter" data-level="3.1.1" data-path="salesforce.html"><a href="salesforce.html#autenticación"><i class="fa fa-check"></i><b>3.1.1</b> Autenticación</a></li>
 <li class="chapter" data-level="3.1.2" data-path="salesforce.html"><a href="salesforce.html#capas-metadata"><i class="fa fa-check"></i><b>3.1.2</b> Capas Metadata</a></li>
 </ul></li>
+<li class="chapter" data-level="3.2" data-path="salesforce.html"><a href="salesforce.html#codigo-fuente"><i class="fa fa-check"></i><b>3.2</b> Codigo Fuente</a>
+<ul>
+<li class="chapter" data-level="3.2.1" data-path="salesforce.html"><a href="salesforce.html#lwc"><i class="fa fa-check"></i><b>3.2.1</b> lwc</a></li>
+</ul></li>
 </ul></li>
 <li class="chapter" data-level="4" data-path="admin-certification.html"><a href="admin-certification.html"><i class="fa fa-check"></i><b>4</b> Admin Certification</a></li>
-<li class="chapter" data-level="5" data-path="blocks.html"><a href="blocks.html"><i class="fa fa-check"></i><b>5</b> Blocks</a>
+<li class="chapter" data-level="5" data-path="retrieve.html"><a href="retrieve.html"><i class="fa fa-check"></i><b>5</b> Retrieve</a>
 <ul>
-<li class="chapter" data-level="5.1" data-path="blocks.html"><a href="blocks.html#equations"><i class="fa fa-check"></i><b>5.1</b> Equations</a></li>
-<li class="chapter" data-level="5.2" data-path="blocks.html"><a href="blocks.html#theorems-and-proofs"><i class="fa fa-check"></i><b>5.2</b> Theorems and proofs</a></li>
-<li class="chapter" data-level="5.3" data-path="blocks.html"><a href="blocks.html#callout-blocks"><i class="fa fa-check"></i><b>5.3</b> Callout blocks</a></li>
+<li class="chapter" data-level="5.1" data-path="retrieve.html"><a href="retrieve.html#lwc-1"><i class="fa fa-check"></i><b>5.1</b> lwc</a></li>
 </ul></li>
 <li class="chapter" data-level="6" data-path="sharing-your-book.html"><a href="sharing-your-book.html"><i class="fa fa-check"></i><b>6</b> Sharing your book</a>
 <ul>
@@ -248,11 +250,11 @@ div.csl-indent {
 <div id="admin-certification" class="section level1 hasAnchor" number="4">
 <h1><span class="header-section-number">4</span> Admin Certification<a href="admin-certification.html#admin-certification" class="anchor-section" aria-label="Anchor link to header"></a></h1>
 <p>Practica:</p>
-<div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb8-1"><a href="admin-certification.html#cb8-1" tabindex="-1"></a><span class="fu">library</span>(webexercises)</span></code></pre></div>
+<div class="sourceCode" id="cb11"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb11-1"><a href="admin-certification.html#cb11-1" tabindex="-1"></a><span class="fu">library</span>(webexercises)</span></code></pre></div>
 <p>Evaluación de Conocimientos
 1. Pregunta de alternativa única (Solo 1 correcta)
 ¿Cuál es la función principal en R para ver la estructura de un objeto?</p>
-<div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb9-1"><a href="admin-certification.html#cb9-1" tabindex="-1"></a><span class="fu">mcq</span>(<span class="fu">c</span>(<span class="st">&quot;summary()&quot;</span>, <span class="st">&quot;plot()&quot;</span>, <span class="at">answer =</span> <span class="st">&quot;str()&quot;</span>, <span class="st">&quot;head()&quot;</span>))</span></code></pre></div>
+<div class="sourceCode" id="cb12"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb12-1"><a href="admin-certification.html#cb12-1" tabindex="-1"></a><span class="fu">mcq</span>(<span class="fu">c</span>(<span class="st">&quot;summary()&quot;</span>, <span class="st">&quot;plot()&quot;</span>, <span class="at">answer =</span> <span class="st">&quot;str()&quot;</span>, <span class="st">&quot;head()&quot;</span>))</span></code></pre></div>
 <pre><code>## [1] &quot;&lt;select class=&#39;webex-select&#39;&gt;&lt;option value=&#39;blank&#39;&gt;&lt;/option&gt;&lt;option value=&#39;&#39;&gt;summary()&lt;/option&gt;&lt;option value=&#39;&#39;&gt;plot()&lt;/option&gt;&lt;option value=&#39;answer&#39;&gt;str()&lt;/option&gt;&lt;option value=&#39;&#39;&gt;head()&lt;/option&gt;&lt;/select&gt;&quot;</code></pre>
 
 </div>
@@ -468,7 +470,7 @@ window.onload = function() {
         </div>
       </div>
 <a href="salesforce.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="blocks.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="retrieve.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
@@ -522,20 +524,6 @@ gitbook.start({
 });
 </script>
 
-<!-- dynamically load mathjax for compatibility with self-contained -->
-<script>
-  (function () {
-    var script = document.createElement("script");
-    script.type = "text/javascript";
-    var src = "true";
-    if (src === "" || src === "true") src = "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/latest.js?config=TeX-MML-AM_CHTML";
-    if (location.protocol !== "file:")
-      if (/^https?:/.test(src))
-        src = src.replace(/^https?:/, '');
-    script.src = src;
-    document.getElementsByTagName("head")[0].appendChild(script);
-  })();
-</script>
 </body>
 
 </html>
