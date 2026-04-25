@@ -182,9 +182,127 @@ datatable(df_ApexClass,
 ```
 
 Mostrar el visor de código para ver las clases aquí mismo:
+```{r visor-vscode-lineas, echo=FALSE, warning=FALSE, message=FALSE}
+library(htmltools)
+library(jsonlite)
 
+# 1. Definir la ruta a los archivos Apex
+ruta_clases <- "codigofuente/unpackaged/classes"
 
+# 2. Leer todos los archivos .cls
+archivos_cls <- list.files(ruta_clases, pattern = "\\.cls$", full.names = TRUE)
+nombres_cls <- basename(archivos_cls)
 
+# 3. Extraer el texto
+contenido_codigos <- sapply(archivos_cls, function(x) paste(readLines(x, warn = FALSE), collapse = "\n"))
+
+# 4. Convertir a JSON de forma segura
+json_codigos <- as.character(toJSON(as.list(setNames(contenido_codigos, nombres_cls)), auto_unbox = TRUE))
+
+# 5. Items de la lista HTML (Panel izquierdo)
+html_items <- paste0(
+  "<div class='item-clase' onclick=\"actualizarVisor('", nombres_cls, "')\" ",
+  "style='padding: 8px 15px; color: #cccccc; font-size: 13px; cursor: pointer; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; border-bottom: 1px solid #333;' ",
+  "onmouseover=\"this.style.backgroundColor='#37373d'\" onmouseout=\"this.style.backgroundColor='transparent'\">",
+  "📄 ", nombres_cls,
+  "</div>",
+  collapse = "\n"
+)
+
+# 6. Estructura HTML final
+html_completo <- paste0('
+<div style="display: flex; height: 550px; border: 1px solid #333; border-radius: 6px; overflow: hidden; font-family: sans-serif; box-shadow: 0 4px 8px rgba(0,0,0,0.2); margin-top: 20px;">
+
+  <div style="width: 30%; min-width: 250px; background-color: #252526; border-right: 1px solid #1e1e1e; display: flex; flex-direction: column;">
+    <div style="padding: 12px 15px; color: #cccccc; font-size: 12px; font-weight: bold; text-transform: uppercase; letter-spacing: 1px; background-color: #2d2d2d;">
+      Explorador Apex
+    </div>
+    <div style="padding: 10px; border-bottom: 1px solid #333; background-color: #252526;">
+      <input type="text" id="buscador-clases" placeholder="Buscar clase (ej. Contact)..." style="width: 100%; box-sizing: border-box; padding: 6px 8px; background-color: #3c3c3c; color: #ccc; border: 1px solid #555; border-radius: 3px; outline: none; font-size: 13px;" onkeyup="filtrarLista()">
+    </div>
+    <div id="lista-clases" style="flex: 1; overflow-y: auto; padding-bottom: 10px;">\n',
+      html_items,
+'   </div>
+  </div>
+
+  <div style="flex: 1; background-color: #1e1e1e; display: flex; flex-direction: column; overflow: hidden;">
+    
+    <div style="padding: 10px 15px; background-color: #2d2d2d; color: #858585; font-size: 13px; border-bottom: 1px solid #1e1e1e;">
+      <span id="titulo-archivo" style="font-family: Consolas, monospace;">Selecciona un archivo para ver su código...</span>
+    </div>
+    
+    <div style="flex: 1; overflow: auto; background-color: #1e1e1e;">
+      <div style="display: flex; padding: 15px; min-width: max-content;">
+        
+        <div id="numeros-linea" style="padding-right: 15px; margin-right: 15px; text-align: right; color: #6e7681; font-family: Consolas, monospace; font-size: 13px; line-height: 1.5; border-right: 1px solid #404040; user-select: none; white-space: pre;">1\n2\n3\n4</div>
+
+        <pre style="margin: 0; background: transparent; border: none; padding: 0; flex: 1;"><code id="visor-codigo" style="color: #d4d4d4; font-family: Consolas, monospace; font-size: 13px; white-space: pre; line-height: 1.5;">/*
+* 1. Haz clic en cualquier clase del panel izquierdo.
+* 2. Usa la barra de búsqueda superior para filtrar la lista rápidamente.
+*/</code></pre>
+      </div>
+    </div>
+
+  </div>
+
+</div>
+
+<script type="application/json" id="json-datos-clases">\n',
+json_codigos,
+'\n</script>
+
+<script>
+  var diccCodigos = {};
+  try {
+    var rawData = document.getElementById("json-datos-clases").textContent;
+    diccCodigos = JSON.parse(rawData);
+  } catch(e) {
+    console.error("Error al procesar el código Apex: ", e);
+  }
+  
+  function actualizarVisor(nombreArchivo) {
+    var visor = document.getElementById("visor-codigo");
+    var titulo = document.getElementById("titulo-archivo");
+    var numeros = document.getElementById("numeros-linea");
+    
+    if (diccCodigos[nombreArchivo]) {
+      var textoCodigo = diccCodigos[nombreArchivo];
+      
+      // 1. Inyectar el código fuente
+      visor.textContent = textoCodigo;
+      
+      // 2. Actualizar el Breadcrumb del título
+      titulo.innerHTML = "<span style=\'color: #4a90e2;\'>classes / </span><span style=\'color: #cccccc;\'>" + nombreArchivo + "</span>";
+      
+      // 3. Calcular y generar los números de línea dinámicamente
+      var lineas = textoCodigo.split(/\\r?\\n/);
+      var htmlNumeros = "";
+      for(var i = 1; i <= lineas.length; i++) {
+        htmlNumeros += i + "\\n";
+      }
+      numeros.textContent = htmlNumeros;
+    }
+  }
+
+  function filtrarLista() {
+    var input = document.getElementById("buscador-clases").value.toLowerCase();
+    var items = document.getElementsByClassName("item-clase");
+    
+    for (var i = 0; i < items.length; i++) {
+      var texto = items[i].textContent || items[i].innerText;
+      if (texto.toLowerCase().indexOf(input) > -1) {
+        items[i].style.display = "";
+      } else {
+        items[i].style.display = "none";
+      }
+    }
+  }
+</script>
+')
+
+# Renderizar HTML
+HTML(html_completo)
+```
 
 ## lwc
 

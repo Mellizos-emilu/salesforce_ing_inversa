@@ -1,0 +1,1088 @@
+.
+├── 01-programacion.Rmd
+├── 02-setup.Rmd
+├── 03-sfconexion.Rmd
+├── 04-admincertification.Rmd
+├── 05-backend.Rmd
+├── 06-share.Rmd
+├── 07-references.Rmd
+├── 08-citations.Rmd
+├── book.bib
+├── codigofuente
+│   └── unpackaged
+│       ├── aura
+│       │   ├── auraEmbeddedLWC
+│       │   │   ├── auraEmbeddedLWC.cmp
+│       │   │   ├── auraEmbeddedLWC.cmp-meta.xml
+│       │   │   ├── auraEmbeddedLWC.css
+│       │   │   └── auraEmbeddedLWCController.js
+│       │   ├── defaultTokens
+│       │   │   ├── defaultTokens.tokens
+│       │   │   └── defaultTokens.tokens-meta.xml
+│       │   ├── lmsPublisherAuraComponent
+│       │   │   ├── lmsPublisherAuraComponent.cmp
+│       │   │   ├── lmsPublisherAuraComponent.cmp-meta.xml
+│       │   │   ├── lmsPublisherAuraComponent.css
+│       │   │   └── lmsPublisherAuraComponentController.js
+│       │   └── lmsSubscriberAuraComponent
+│       │       ├── lmsSubscriberAuraComponent.cmp
+│       │       ├── lmsSubscriberAuraComponent.cmp-meta.xml
+│       │       ├── lmsSubscriberAuraComponent.css
+│       │       └── lmsSubscriberAuraComponentController.js
+│       ├── classes
+│       │   ├── AccountController.cls
+│       │   ├── AccountController.cls-meta.xml
+│       │   ├── ApexTypesController.cls
+│       │   ├── ApexTypesController.cls-meta.xml
+│       │   ├── ContactController.cls
+│       │   ├── ContactController.cls-meta.xml
+│       │   ├── CustomWrapper.cls
+│       │   ├── CustomWrapper.cls-meta.xml
+│       │   ├── LMSVisualforceController.cls
+│       │   ├── LMSVisualforceController.cls-meta.xml
+│       │   ├── TestAccountController.cls
+│       │   ├── TestAccountController.cls-meta.xml
+│       │   ├── TestApexTypeController.cls
+│       │   ├── TestApexTypeController.cls-meta.xml
+│       │   ├── TestContactController.cls
+│       │   ├── TestContactController.cls-meta.xml
+│       │   ├── TestLMSVisualforceController.cls
+│       │   └── TestLMSVisualforceController.cls-meta.xml
+│       ├── lwc
+│       │   ├── apexImperativeMethod
+│       │   │   ├── apexImperativeMethod.html
+│       │   │   ├── apexImperativeMethod.js
+│       │   │   └── apexImperativeMethod.js-meta.xml
+│       │   ├── apexImperativeMethodWithComplexParams
+│       │   │   ├── apexImperativeMethodWithComplexParams.html
+│       │   │   ├── apexImperativeMethodWithComplexParams.js
+│       │   │   └── apexImperativeMethodWithComplexParams.js-meta.xml
+│       │   ├── apexImperativeMethodWithParams
+│       │   │   ├── apexImperativeMethodWithParams.html
+│       │   │   ├── apexImperativeMethodWithParams.js
+│       │   │   └── apexImperativeMethodWithParams.js-meta.xml
+│       │   ├── apexStaticSchema
+│       │   │   ├── apexStaticSchema.html
+│       │   │   ├── apexStaticSchema.js
+│       │   │   └── apexStaticSchema.js-meta.xml
+│       │   ├── apexWireMethodToFunction
+│       │   │   ├── apexWireMethodToFunction.html
+│       │   │   ├── apexWireMethodToFunction.js
+│       │   │   └── apexWireMethodToFunction.js-meta.xml
+│       │   ├── apexWireMethodToProperty
+│       │   │   ├── apexWireMethodToProperty.html
+│       │   │   ├── apexWireMethodToProperty.js
+│       │   │   └── apexWireMethodToProperty.js-meta.xml
+│       │   ├── apexWireMethodWithComplexParams
+│       │   │   ├── apexWireMethodWithComplexParams.html
+│       │   │   ├── apexWireMethodWithComplexParams.js
+│       │   │   └── apexWireMethodWithComplexParams.js-meta.xml
+│       │   ├── apexWireMethodWithParams
+│       │   │   ├── apexWireMethodWithParams.html
+│       │   │   ├── apexWireMethodWithParams.js
+│       │   │   └── apexWireMethodWithParams.js-meta.xml
+│       │   ├── apiMethod
+│       │   │   ├── apiMethod.css
+│       │   │   ├── apiMethod.html
+│       │   │   ├── apiMethod.js
+│       │   │   └── apiMethod.js-meta.xml
+│       │   ├── apiProperty
+│       │   │   ├── apiProperty.css
+│       │   │   ├── apiProperty.html
+│       │   │   ├── apiProperty.js
+│       │   │   └── apiProperty.js-meta.xml
+│       │   ├── apiSetterGetter
+│       │   │   ├── apiSetterGetter.css
+│       │   │   ├── apiSetterGetter.html
+│       │   │   ├── apiSetterGetter.js
+│       │   │   └── apiSetterGetter.js-meta.xml
+│       │   ├── apiSpread
+│       │   │   ├── apiSpread.css
+│       │   │   ├── apiSpread.html
+│       │   │   ├── apiSpread.js
+│       │   │   └── apiSpread.js-meta.xml
+│       │   ├── chartBar
+│       │   │   ├── chartBar.css
+│       │   │   ├── chartBar.html
+│       │   │   ├── chartBar.js
+│       │   │   └── chartBar.js-meta.xml
+│       │   ├── child
+│       │   │   ├── child.html
+│       │   │   ├── child.js
+│       │   │   └── child.js-meta.xml
+│       │   ├── clock
+│       │   │   ├── clock.css
+│       │   │   ├── clock.html
+│       │   │   ├── clock.js
+│       │   │   └── clock.js-meta.xml
+│       │   ├── compositionBasics
+│       │   │   ├── compositionBasics.css
+│       │   │   ├── compositionBasics.html
+│       │   │   ├── compositionBasics.js
+│       │   │   └── compositionBasics.js-meta.xml
+│       │   ├── compositionContactSearch
+│       │   │   ├── compositionContactSearch.css
+│       │   │   ├── compositionContactSearch.html
+│       │   │   ├── compositionContactSearch.js
+│       │   │   └── compositionContactSearch.js-meta.xml
+│       │   ├── compositionIteration
+│       │   │   ├── compositionIteration.css
+│       │   │   ├── compositionIteration.html
+│       │   │   ├── compositionIteration.js
+│       │   │   └── compositionIteration.js-meta.xml
+│       │   ├── compositionWithAppBuilder
+│       │   │   ├── compositionWithAppBuilder.html
+│       │   │   ├── compositionWithAppBuilder.js
+│       │   │   └── compositionWithAppBuilder.js-meta.xml
+│       │   ├── contactInfo
+│       │   │   ├── contactInfo.html
+│       │   │   ├── contactInfo.js
+│       │   │   └── contactInfo.js-meta.xml
+│       │   ├── contactList
+│       │   │   ├── contactList.css
+│       │   │   ├── contactList.html
+│       │   │   ├── contactList.js
+│       │   │   └── contactList.js-meta.xml
+│       │   ├── contactListItem
+│       │   │   ├── contactListItem.css
+│       │   │   ├── contactListItem.html
+│       │   │   ├── contactListItem.js
+│       │   │   └── contactListItem.js-meta.xml
+│       │   ├── contactListItemBubbling
+│       │   │   ├── contactListItemBubbling.css
+│       │   │   ├── contactListItemBubbling.html
+│       │   │   ├── contactListItemBubbling.js
+│       │   │   └── contactListItemBubbling.js-meta.xml
+│       │   ├── contactSelector
+│       │   │   ├── contactSelector.html
+│       │   │   ├── contactSelector.js
+│       │   │   └── contactSelector.js-meta.xml
+│       │   ├── contactTile
+│       │   │   ├── contactTile.css
+│       │   │   ├── contactTile.html
+│       │   │   ├── contactTile.js
+│       │   │   └── contactTile.js-meta.xml
+│       │   ├── customDataTypes
+│       │   │   ├── customDataTypes.html
+│       │   │   ├── customDataTypes.js
+│       │   │   ├── customDataTypes.js-meta.xml
+│       │   │   └── customPicture.html
+│       │   ├── datatableCustomDataType
+│       │   │   ├── datatableCustomDataType.html
+│       │   │   ├── datatableCustomDataType.js
+│       │   │   └── datatableCustomDataType.js-meta.xml
+│       │   ├── datatableInlineEditWithApex
+│       │   │   ├── datatableInlineEditWithApex.html
+│       │   │   ├── datatableInlineEditWithApex.js
+│       │   │   └── datatableInlineEditWithApex.js-meta.xml
+│       │   ├── datatableInlineEditWithUiApi
+│       │   │   ├── datatableInlineEditWithUiApi.html
+│       │   │   ├── datatableInlineEditWithUiApi.js
+│       │   │   └── datatableInlineEditWithUiApi.js-meta.xml
+│       │   ├── dispatchEventHeadlessAction
+│       │   │   ├── dispatchEventHeadlessAction.html
+│       │   │   ├── dispatchEventHeadlessAction.js
+│       │   │   └── dispatchEventHeadlessAction.js-meta.xml
+│       │   ├── dispatchRefreshEvent
+│       │   │   ├── dispatchRefreshEvent.html
+│       │   │   ├── dispatchRefreshEvent.js
+│       │   │   └── dispatchRefreshEvent.js-meta.xml
+│       │   ├── editRecordScreenAction
+│       │   │   ├── editRecordScreenAction.html
+│       │   │   ├── editRecordScreenAction.js
+│       │   │   └── editRecordScreenAction.js-meta.xml
+│       │   ├── errorPanel
+│       │   │   ├── errorPanel.js
+│       │   │   ├── errorPanel.js-meta.xml
+│       │   │   └── templates
+│       │   │       ├── inlineMessage.html
+│       │   │       └── noDataIllustration.html
+│       │   ├── eventBubbling
+│       │   │   ├── eventBubbling.css
+│       │   │   ├── eventBubbling.html
+│       │   │   ├── eventBubbling.js
+│       │   │   └── eventBubbling.js-meta.xml
+│       │   ├── eventSimple
+│       │   │   ├── eventSimple.css
+│       │   │   ├── eventSimple.html
+│       │   │   ├── eventSimple.js
+│       │   │   └── eventSimple.js-meta.xml
+│       │   ├── eventWithData
+│       │   │   ├── eventWithData.css
+│       │   │   ├── eventWithData.html
+│       │   │   ├── eventWithData.js
+│       │   │   └── eventWithData.js-meta.xml
+│       │   ├── graphqlContacts
+│       │   │   ├── graphqlContacts.html
+│       │   │   ├── graphqlContacts.js
+│       │   │   └── graphqlContacts.js-meta.xml
+│       │   ├── graphqlMultipleObjects
+│       │   │   ├── graphqlMultipleObjects.html
+│       │   │   ├── graphqlMultipleObjects.js
+│       │   │   └── graphqlMultipleObjects.js-meta.xml
+│       │   ├── graphqlPagination
+│       │   │   ├── graphqlPagination.html
+│       │   │   ├── graphqlPagination.js
+│       │   │   └── graphqlPagination.js-meta.xml
+│       │   ├── graphqlRefresh
+│       │   │   ├── graphqlRefresh.html
+│       │   │   ├── graphqlRefresh.js
+│       │   │   └── graphqlRefresh.js-meta.xml
+│       │   ├── graphqlVariables
+│       │   │   ├── graphqlVariables.html
+│       │   │   ├── graphqlVariables.js
+│       │   │   └── graphqlVariables.js-meta.xml
+│       │   ├── hello
+│       │   │   ├── hello.html
+│       │   │   ├── hello.js
+│       │   │   └── hello.js-meta.xml
+│       │   ├── helloBinding
+│       │   │   ├── helloBinding.html
+│       │   │   ├── helloBinding.js
+│       │   │   └── helloBinding.js-meta.xml
+│       │   ├── helloConditionalRendering
+│       │   │   ├── helloConditionalRendering.html
+│       │   │   ├── helloConditionalRendering.js
+│       │   │   └── helloConditionalRendering.js-meta.xml
+│       │   ├── helloExpressions
+│       │   │   ├── helloExpressions.html
+│       │   │   ├── helloExpressions.js
+│       │   │   └── helloExpressions.js-meta.xml
+│       │   ├── helloForEach
+│       │   │   ├── helloForEach.html
+│       │   │   ├── helloForEach.js
+│       │   │   └── helloForEach.js-meta.xml
+│       │   ├── helloIterator
+│       │   │   ├── helloIterator.css
+│       │   │   ├── helloIterator.html
+│       │   │   ├── helloIterator.js
+│       │   │   └── helloIterator.js-meta.xml
+│       │   ├── lds
+│       │   │   ├── lds.html
+│       │   │   ├── lds.js
+│       │   │   └── lds.js-meta.xml
+│       │   ├── ldsCreateRecord
+│       │   │   ├── ldsCreateRecord.html
+│       │   │   ├── ldsCreateRecord.js
+│       │   │   └── ldsCreateRecord.js-meta.xml
+│       │   ├── ldsDeleteRecord
+│       │   │   ├── ldsDeleteRecord.html
+│       │   │   ├── ldsDeleteRecord.js
+│       │   │   └── ldsDeleteRecord.js-meta.xml
+│       │   ├── ldsGenerateRecordInputForCreate
+│       │   │   ├── ldsGenerateRecordInputForCreate.html
+│       │   │   ├── ldsGenerateRecordInputForCreate.js
+│       │   │   └── ldsGenerateRecordInputForCreate.js-meta.xml
+│       │   ├── ldsNotifyRecordUpdateAvailable
+│       │   │   ├── ldsNotifyRecordUpdateAvailable.html
+│       │   │   ├── ldsNotifyRecordUpdateAvailable.js
+│       │   │   └── ldsNotifyRecordUpdateAvailable.js-meta.xml
+│       │   ├── ldsUtils
+│       │   │   ├── ldsUtils.js
+│       │   │   └── ldsUtils.js-meta.xml
+│       │   ├── libsChartjs
+│       │   │   ├── libsChartjs.html
+│       │   │   ├── libsChartjs.js
+│       │   │   └── libsChartjs.js-meta.xml
+│       │   ├── libsD3
+│       │   │   ├── data.js
+│       │   │   ├── libsD3.html
+│       │   │   ├── libsD3.js
+│       │   │   └── libsD3.js-meta.xml
+│       │   ├── libsFullCalendar
+│       │   │   ├── libsFullCalendar.html
+│       │   │   ├── libsFullCalendar.js
+│       │   │   └── libsFullCalendar.js-meta.xml
+│       │   ├── lightDomQuery
+│       │   │   ├── lightDomQuery.css
+│       │   │   ├── lightDomQuery.html
+│       │   │   ├── lightDomQuery.js
+│       │   │   └── lightDomQuery.js-meta.xml
+│       │   ├── lightDomQueryChild
+│       │   │   ├── lightDomQueryChild.html
+│       │   │   ├── lightDomQueryChild.js
+│       │   │   └── lightDomQueryChild.js-meta.xml
+│       │   ├── lmsPublisherWebComponent
+│       │   │   ├── lmsPublisherWebComponent.html
+│       │   │   ├── lmsPublisherWebComponent.js
+│       │   │   └── lmsPublisherWebComponent.js-meta.xml
+│       │   ├── lmsSubscriberWebComponent
+│       │   │   ├── lmsSubscriberWebComponent.css
+│       │   │   ├── lmsSubscriberWebComponent.html
+│       │   │   ├── lmsSubscriberWebComponent.js
+│       │   │   └── lmsSubscriberWebComponent.js-meta.xml
+│       │   ├── miscContentAsset
+│       │   │   ├── miscContentAsset.html
+│       │   │   ├── miscContentAsset.js
+│       │   │   └── miscContentAsset.js-meta.xml
+│       │   ├── miscDomQuery
+│       │   │   ├── miscDomQuery.html
+│       │   │   ├── miscDomQuery.js
+│       │   │   └── miscDomQuery.js-meta.xml
+│       │   ├── miscGetUserId
+│       │   │   ├── miscGetUserId.html
+│       │   │   ├── miscGetUserId.js
+│       │   │   └── miscGetUserId.js-meta.xml
+│       │   ├── miscI18n
+│       │   │   ├── miscI18n.html
+│       │   │   ├── miscI18n.js
+│       │   │   └── miscI18n.js-meta.xml
+│       │   ├── miscLogger
+│       │   │   ├── miscLogger.html
+│       │   │   ├── miscLogger.js
+│       │   │   └── miscLogger.js-meta.xml
+│       │   ├── miscModal
+│       │   │   ├── miscModal.html
+│       │   │   ├── miscModal.js
+│       │   │   └── miscModal.js-meta.xml
+│       │   ├── miscMultipleTemplates
+│       │   │   ├── miscMultipleTemplates.js
+│       │   │   ├── miscMultipleTemplates.js-meta.xml
+│       │   │   ├── templateOne.html
+│       │   │   └── templateTwo.html
+│       │   ├── miscNotificationModules
+│       │   │   ├── miscNotificationModules.html
+│       │   │   ├── miscNotificationModules.js
+│       │   │   └── miscNotificationModules.js-meta.xml
+│       │   ├── miscPermissionBasedUI
+│       │   │   ├── miscPermissionBasedUI.html
+│       │   │   ├── miscPermissionBasedUI.js
+│       │   │   └── miscPermissionBasedUI.js-meta.xml
+│       │   ├── miscRestApiCall
+│       │   │   ├── miscRestApiCall.html
+│       │   │   ├── miscRestApiCall.js
+│       │   │   └── miscRestApiCall.js-meta.xml
+│       │   ├── miscSharedJavaScript
+│       │   │   ├── miscSharedJavaScript.html
+│       │   │   ├── miscSharedJavaScript.js
+│       │   │   └── miscSharedJavaScript.js-meta.xml
+│       │   ├── miscStaticResource
+│       │   │   ├── miscStaticResource.html
+│       │   │   ├── miscStaticResource.js
+│       │   │   └── miscStaticResource.js-meta.xml
+│       │   ├── miscToastNotification
+│       │   │   ├── miscToastNotification.html
+│       │   │   ├── miscToastNotification.js
+│       │   │   └── miscToastNotification.js-meta.xml
+│       │   ├── mortgage
+│       │   │   ├── mortgage.js
+│       │   │   └── mortgage.js-meta.xml
+│       │   ├── myModal
+│       │   │   ├── myModal.html
+│       │   │   ├── myModal.js
+│       │   │   └── myModal.js-meta.xml
+│       │   ├── navigateToRecordHeadlessAction
+│       │   │   ├── navigateToRecordHeadlessAction.html
+│       │   │   ├── navigateToRecordHeadlessAction.js
+│       │   │   └── navigateToRecordHeadlessAction.js-meta.xml
+│       │   ├── navToChatterHome
+│       │   │   ├── navToChatterHome.html
+│       │   │   ├── navToChatterHome.js
+│       │   │   └── navToChatterHome.js-meta.xml
+│       │   ├── navToFilesHome
+│       │   │   ├── navToFilesHome.html
+│       │   │   ├── navToFilesHome.js
+│       │   │   └── navToFilesHome.js-meta.xml
+│       │   ├── navToHelloTab
+│       │   │   ├── navToHelloTab.html
+│       │   │   ├── navToHelloTab.js
+│       │   │   └── navToHelloTab.js-meta.xml
+│       │   ├── navToHome
+│       │   │   ├── navToHome.html
+│       │   │   ├── navToHome.js
+│       │   │   └── navToHome.js-meta.xml
+│       │   ├── navToListView
+│       │   │   ├── navToListView.html
+│       │   │   ├── navToListView.js
+│       │   │   └── navToListView.js-meta.xml
+│       │   ├── navToNewRecord
+│       │   │   ├── navToNewRecord.html
+│       │   │   ├── navToNewRecord.js
+│       │   │   └── navToNewRecord.js-meta.xml
+│       │   ├── navToNewRecordWithDefaults
+│       │   │   ├── navToNewRecordWithDefaults.html
+│       │   │   ├── navToNewRecordWithDefaults.js
+│       │   │   └── navToNewRecordWithDefaults.js-meta.xml
+│       │   ├── navToRecord
+│       │   │   ├── navToRecord.html
+│       │   │   ├── navToRecord.js
+│       │   │   └── navToRecord.js-meta.xml
+│       │   ├── navToRelatedList
+│       │   │   ├── navToRelatedList.html
+│       │   │   ├── navToRelatedList.js
+│       │   │   └── navToRelatedList.js-meta.xml
+│       │   ├── opportunitiesList
+│       │   │   ├── opportunitiesList.html
+│       │   │   ├── opportunitiesList.js
+│       │   │   └── opportunitiesList.js-meta.xml
+│       │   ├── opportunitiesStateManager
+│       │   │   ├── opportunitiesStateManager.js
+│       │   │   └── opportunitiesStateManager.js-meta.xml
+│       │   ├── opportunitiesSummary
+│       │   │   ├── opportunitiesSummary.html
+│       │   │   ├── opportunitiesSummary.js
+│       │   │   └── opportunitiesSummary.js-meta.xml
+│       │   ├── paginator
+│       │   │   ├── paginator.html
+│       │   │   ├── paginator.js
+│       │   │   └── paginator.js-meta.xml
+│       │   ├── recordEditFormDynamicContact
+│       │   │   ├── recordEditFormDynamicContact.html
+│       │   │   ├── recordEditFormDynamicContact.js
+│       │   │   └── recordEditFormDynamicContact.js-meta.xml
+│       │   ├── recordEditFormStaticContact
+│       │   │   ├── recordEditFormStaticContact.html
+│       │   │   ├── recordEditFormStaticContact.js
+│       │   │   └── recordEditFormStaticContact.js-meta.xml
+│       │   ├── recordFormDynamicContact
+│       │   │   ├── recordFormDynamicContact.html
+│       │   │   ├── recordFormDynamicContact.js
+│       │   │   └── recordFormDynamicContact.js-meta.xml
+│       │   ├── recordFormStaticContact
+│       │   │   ├── recordFormStaticContact.html
+│       │   │   ├── recordFormStaticContact.js
+│       │   │   └── recordFormStaticContact.js-meta.xml
+│       │   ├── recordPickerDynamicTarget
+│       │   │   ├── recordPickerDynamicTarget.html
+│       │   │   ├── recordPickerDynamicTarget.js
+│       │   │   └── recordPickerDynamicTarget.js-meta.xml
+│       │   ├── recordPickerHello
+│       │   │   ├── recordPickerHello.html
+│       │   │   ├── recordPickerHello.js
+│       │   │   └── recordPickerHello.js-meta.xml
+│       │   ├── recordPickerMultiValue
+│       │   │   ├── recordPickerMultiValue.html
+│       │   │   ├── recordPickerMultiValue.js
+│       │   │   └── recordPickerMultiValue.js-meta.xml
+│       │   ├── recordViewFormDynamicContact
+│       │   │   ├── recordViewFormDynamicContact.html
+│       │   │   ├── recordViewFormDynamicContact.js
+│       │   │   └── recordViewFormDynamicContact.js-meta.xml
+│       │   ├── recordViewFormStaticContact
+│       │   │   ├── recordViewFormStaticContact.html
+│       │   │   ├── recordViewFormStaticContact.js
+│       │   │   └── recordViewFormStaticContact.js-meta.xml
+│       │   ├── resourceLoader
+│       │   │   ├── resourceLoader.js
+│       │   │   └── resourceLoader.js-meta.xml
+│       │   ├── stateManager
+│       │   │   ├── stateManager.css
+│       │   │   ├── stateManager.html
+│       │   │   ├── stateManager.js
+│       │   │   └── stateManager.js-meta.xml
+│       │   ├── stylesheets
+│       │   │   ├── stylesheets.css
+│       │   │   ├── stylesheets.html
+│       │   │   ├── stylesheets.js
+│       │   │   ├── stylesheets.js-meta.xml
+│       │   │   └── text-styles.css
+│       │   ├── stylingHooks
+│       │   │   ├── stylingHooks.css
+│       │   │   ├── stylingHooks.html
+│       │   │   ├── stylingHooks.js
+│       │   │   └── stylingHooks.js-meta.xml
+│       │   ├── todoList
+│       │   │   ├── todoList.css
+│       │   │   ├── todoList.html
+│       │   │   ├── todoList.js
+│       │   │   └── todoList.js-meta.xml
+│       │   ├── viewSource
+│       │   │   ├── viewSource.css
+│       │   │   ├── viewSource.html
+│       │   │   ├── viewSource.js
+│       │   │   └── viewSource.js-meta.xml
+│       │   ├── viewToRefresh
+│       │   │   ├── viewToRefresh.html
+│       │   │   ├── viewToRefresh.js
+│       │   │   └── viewToRefresh.js-meta.xml
+│       │   ├── wireCurrentPageReference
+│       │   │   ├── wireCurrentPageReference.css
+│       │   │   ├── wireCurrentPageReference.html
+│       │   │   ├── wireCurrentPageReference.js
+│       │   │   └── wireCurrentPageReference.js-meta.xml
+│       │   ├── wireGetObjectInfo
+│       │   │   ├── wireGetObjectInfo.css
+│       │   │   ├── wireGetObjectInfo.html
+│       │   │   ├── wireGetObjectInfo.js
+│       │   │   └── wireGetObjectInfo.js-meta.xml
+│       │   ├── wireGetPicklistValues
+│       │   │   ├── wireGetPicklistValues.css
+│       │   │   ├── wireGetPicklistValues.html
+│       │   │   ├── wireGetPicklistValues.js
+│       │   │   └── wireGetPicklistValues.js-meta.xml
+│       │   ├── wireGetPicklistValuesByRecordType
+│       │   │   ├── wireGetPicklistValuesByRecordType.css
+│       │   │   ├── wireGetPicklistValuesByRecordType.html
+│       │   │   ├── wireGetPicklistValuesByRecordType.js
+│       │   │   └── wireGetPicklistValuesByRecordType.js-meta.xml
+│       │   ├── wireGetRecord
+│       │   │   ├── wireGetRecord.css
+│       │   │   ├── wireGetRecord.html
+│       │   │   ├── wireGetRecord.js
+│       │   │   └── wireGetRecord.js-meta.xml
+│       │   ├── wireGetRecordDynamicContact
+│       │   │   ├── wireGetRecordDynamicContact.html
+│       │   │   ├── wireGetRecordDynamicContact.js
+│       │   │   └── wireGetRecordDynamicContact.js-meta.xml
+│       │   ├── wireGetRecords
+│       │   │   ├── wireGetRecords.css
+│       │   │   ├── wireGetRecords.html
+│       │   │   ├── wireGetRecords.js
+│       │   │   └── wireGetRecords.js-meta.xml
+│       │   ├── wireGetRecordsDifferentTypes
+│       │   │   ├── wireGetRecordsDifferentTypes.css
+│       │   │   ├── wireGetRecordsDifferentTypes.html
+│       │   │   ├── wireGetRecordsDifferentTypes.js
+│       │   │   └── wireGetRecordsDifferentTypes.js-meta.xml
+│       │   ├── wireGetRecordStaticContact
+│       │   │   ├── wireGetRecordStaticContact.html
+│       │   │   ├── wireGetRecordStaticContact.js
+│       │   │   └── wireGetRecordStaticContact.js-meta.xml
+│       │   ├── wireGetRecordUser
+│       │   │   ├── wireGetRecordUser.html
+│       │   │   ├── wireGetRecordUser.js
+│       │   │   └── wireGetRecordUser.js-meta.xml
+│       │   ├── wireListView
+│       │   │   ├── wireListView.html
+│       │   │   ├── wireListView.js
+│       │   │   └── wireListView.js-meta.xml
+│       │   ├── workspaceAPI
+│       │   │   ├── workspaceAPI.html
+│       │   │   ├── workspaceAPI.js
+│       │   │   └── workspaceAPI.js-meta.xml
+│       │   ├── workspaceAPICloseTab
+│       │   │   ├── workspaceAPICloseTab.html
+│       │   │   ├── workspaceAPICloseTab.js
+│       │   │   └── workspaceAPICloseTab.js-meta.xml
+│       │   ├── workspaceAPIDisableTabClose
+│       │   │   ├── workspaceAPIDisableTabClose.html
+│       │   │   ├── workspaceAPIDisableTabClose.js
+│       │   │   └── workspaceAPIDisableTabClose.js-meta.xml
+│       │   ├── workspaceAPIFocusTab
+│       │   │   ├── workspaceAPIFocusTab.html
+│       │   │   ├── workspaceAPIFocusTab.js
+│       │   │   └── workspaceAPIFocusTab.js-meta.xml
+│       │   ├── workspaceAPIHighlightTab
+│       │   │   ├── workspaceAPIHighlightTab.html
+│       │   │   ├── workspaceAPIHighlightTab.js
+│       │   │   └── workspaceAPIHighlightTab.js-meta.xml
+│       │   ├── workspaceAPIOpenSubtab
+│       │   │   ├── workspaceAPIOpenSubtab.html
+│       │   │   ├── workspaceAPIOpenSubtab.js
+│       │   │   └── workspaceAPIOpenSubtab.js-meta.xml
+│       │   ├── workspaceAPIOpenTab
+│       │   │   ├── workspaceAPIOpenTab.html
+│       │   │   ├── workspaceAPIOpenTab.js
+│       │   │   └── workspaceAPIOpenTab.js-meta.xml
+│       │   ├── workspaceAPIRefreshTab
+│       │   │   ├── workspaceAPIRefreshTab.html
+│       │   │   ├── workspaceAPIRefreshTab.js
+│       │   │   └── workspaceAPIRefreshTab.js-meta.xml
+│       │   ├── workspaceAPISetTabIcon
+│       │   │   ├── workspaceAPISetTabIcon.html
+│       │   │   ├── workspaceAPISetTabIcon.js
+│       │   │   └── workspaceAPISetTabIcon.js-meta.xml
+│       │   └── workspaceAPISetTabLabel
+│       │       ├── workspaceAPISetTabLabel.html
+│       │       ├── workspaceAPISetTabLabel.js
+│       │       └── workspaceAPISetTabLabel.js-meta.xml
+│       └── package.xml
+├── data
+│   ├── sf_login_mock.rds
+│   ├── sf_metadata_ApexClass.rds
+│   ├── sf_metadata_describe.rds
+│   └── sf_metadata_lwc.rds
+├── images
+│   ├── clipboard-1155832598.png
+│   ├── clipboard-1195863881.png
+│   ├── clipboard-1332188265.png
+│   ├── clipboard-2122138464.png
+│   ├── clipboard-2380794441.png
+│   ├── clipboard-2599466062.png
+│   ├── clipboard-3730263570.png
+│   ├── clipboard-3841169795.png
+│   ├── clipboard-4160741659.png
+│   ├── dar_version_arq.png
+│   ├── Diagrama_Base.png
+│   └── ESTADO_DEL_ARTE.svg
+├── include
+│   ├── webex.css
+│   └── webex.js
+├── index.Rmd
+├── package.zip
+├── packages.bib
+├── preamble.tex
+├── R
+│   └── webex.R
+├── README.md
+├── renv
+│   ├── activate.R
+│   ├── library
+│   │   └── windows
+│   │       ├── R-4.4
+│   │       │   └── x86_64-w64-mingw32
+│   │       │       ├── anytime
+│   │       │       ├── askpass
+│   │       │       ├── backports
+│   │       │       ├── base64enc
+│   │       │       ├── BH
+│   │       │       ├── bit
+│   │       │       ├── bit64
+│   │       │       ├── blob
+│   │       │       ├── bookdown
+│   │       │       ├── broom
+│   │       │       ├── bslib
+│   │       │       ├── cachem
+│   │       │       ├── callr
+│   │       │       ├── cellranger
+│   │       │       ├── cli
+│   │       │       ├── clipr
+│   │       │       ├── conflicted
+│   │       │       ├── cpp11
+│   │       │       ├── crayon
+│   │       │       ├── crosstalk
+│   │       │       ├── curl
+│   │       │       ├── data.table
+│   │       │       ├── DBI
+│   │       │       ├── dbplyr
+│   │       │       ├── digest
+│   │       │       ├── dplyr
+│   │       │       ├── DT
+│   │       │       ├── dtplyr
+│   │       │       ├── evaluate
+│   │       │       ├── farver
+│   │       │       ├── fastmap
+│   │       │       ├── fontawesome
+│   │       │       ├── forcats
+│   │       │       ├── fs
+│   │       │       ├── gargle
+│   │       │       ├── generics
+│   │       │       ├── ggplot2
+│   │       │       ├── glue
+│   │       │       ├── googledrive
+│   │       │       ├── googlesheets4
+│   │       │       ├── gtable
+│   │       │       ├── haven
+│   │       │       ├── highr
+│   │       │       ├── hms
+│   │       │       ├── htmltools
+│   │       │       ├── htmlwidgets
+│   │       │       ├── httpuv
+│   │       │       ├── httr
+│   │       │       ├── ids
+│   │       │       ├── installr
+│   │       │       ├── isoband
+│   │       │       ├── jquerylib
+│   │       │       ├── jsonlite
+│   │       │       ├── knitr
+│   │       │       ├── labeling
+│   │       │       ├── later
+│   │       │       ├── lazyeval
+│   │       │       ├── lifecycle
+│   │       │       ├── lubridate
+│   │       │       ├── magrittr
+│   │       │       ├── memoise
+│   │       │       ├── mime
+│   │       │       ├── modelr
+│   │       │       ├── openssl
+│   │       │       ├── otel
+│   │       │       ├── pillar
+│   │       │       ├── pkgconfig
+│   │       │       ├── prettyunits
+│   │       │       ├── processx
+│   │       │       ├── progress
+│   │       │       ├── promises
+│   │       │       ├── ps
+│   │       │       ├── purrr
+│   │       │       ├── R6
+│   │       │       ├── ragg
+│   │       │       ├── rappdirs
+│   │       │       ├── RColorBrewer
+│   │       │       ├── Rcpp
+│   │       │       ├── readr
+│   │       │       ├── readxl
+│   │       │       ├── rematch
+│   │       │       ├── rematch2
+│   │       │       ├── renv
+│   │       │       │   ├── bin
+│   │       │       │   │   ├── renv
+│   │       │       │   │   └── renv.bat
+│   │       │       │   ├── config.yml
+│   │       │       │   ├── DESCRIPTION
+│   │       │       │   ├── doc
+│   │       │       │   │   ├── ci.html
+│   │       │       │   │   ├── ci.R
+│   │       │       │   │   ├── ci.Rmd
+│   │       │       │   │   ├── docker.html
+│   │       │       │   │   ├── docker.R
+│   │       │       │   │   ├── docker.Rmd
+│   │       │       │   │   ├── faq.html
+│   │       │       │   │   ├── faq.R
+│   │       │       │   │   ├── faq.Rmd
+│   │       │       │   │   ├── index.html
+│   │       │       │   │   ├── package-install.html
+│   │       │       │   │   ├── package-install.R
+│   │       │       │   │   ├── package-install.Rmd
+│   │       │       │   │   ├── package-sources.html
+│   │       │       │   │   ├── package-sources.R
+│   │       │       │   │   ├── package-sources.Rmd
+│   │       │       │   │   ├── packages.html
+│   │       │       │   │   ├── packages.R
+│   │       │       │   │   ├── packages.Rmd
+│   │       │       │   │   ├── packrat.html
+│   │       │       │   │   ├── packrat.R
+│   │       │       │   │   ├── packrat.Rmd
+│   │       │       │   │   ├── profiles.html
+│   │       │       │   │   ├── profiles.R
+│   │       │       │   │   ├── profiles.Rmd
+│   │       │       │   │   ├── python.html
+│   │       │       │   │   ├── python.R
+│   │       │       │   │   ├── python.Rmd
+│   │       │       │   │   ├── renv.html
+│   │       │       │   │   ├── renv.R
+│   │       │       │   │   ├── renv.Rmd
+│   │       │       │   │   ├── rsconnect.html
+│   │       │       │   │   ├── rsconnect.R
+│   │       │       │   │   └── rsconnect.Rmd
+│   │       │       │   ├── ext
+│   │       │       │   │   └── renv.c
+│   │       │       │   ├── help
+│   │       │       │   │   ├── aliases.rds
+│   │       │       │   │   ├── AnIndex
+│   │       │       │   │   ├── figures
+│   │       │       │   │   │   └── logo.svg
+│   │       │       │   │   ├── paths.rds
+│   │       │       │   │   ├── renv.rdb
+│   │       │       │   │   └── renv.rdx
+│   │       │       │   ├── html
+│   │       │       │   │   ├── 00Index.html
+│   │       │       │   │   └── R.css
+│   │       │       │   ├── INDEX
+│   │       │       │   ├── LICENSE
+│   │       │       │   ├── Meta
+│   │       │       │   │   ├── features.rds
+│   │       │       │   │   ├── hsearch.rds
+│   │       │       │   │   ├── links.rds
+│   │       │       │   │   ├── nsInfo.rds
+│   │       │       │   │   ├── package.rds
+│   │       │       │   │   ├── Rd.rds
+│   │       │       │   │   └── vignette.rds
+│   │       │       │   ├── NAMESPACE
+│   │       │       │   ├── NEWS.md
+│   │       │       │   ├── R
+│   │       │       │   │   ├── renv
+│   │       │       │   │   ├── renv.rdb
+│   │       │       │   │   └── renv.rdx
+│   │       │       │   ├── repos
+│   │       │       │   │   └── src
+│   │       │       │   │       └── contrib
+│   │       │       │   │           ├── PACKAGES
+│   │       │       │   │           ├── PACKAGES.gz
+│   │       │       │   │           ├── PACKAGES.rds
+│   │       │       │   │           └── renv_1.2.2.tar.gz
+│   │       │       │   ├── resources
+│   │       │       │   │   ├── activate.R
+│   │       │       │   │   ├── scripts-git-askpass.cmd
+│   │       │       │   │   ├── scripts-git-askpass.sh
+│   │       │       │   │   ├── vendor
+│   │       │       │   │   │   └── renv.R
+│   │       │       │   │   ├── watchdog-process.R
+│   │       │       │   │   └── WELCOME
+│   │       │       │   ├── rstudio
+│   │       │       │   │   └── addins.dcf
+│   │       │       │   ├── schema
+│   │       │       │   │   └── draft-07.renv.lock.schema.json
+│   │       │       │   └── sysreqs
+│   │       │       │       └── sysreqs.json
+│   │       │       ├── reprex
+│   │       │       ├── rlang
+│   │       │       ├── rlist
+│   │       │       ├── rmarkdown
+│   │       │       ├── rstudioapi
+│   │       │       ├── rvest
+│   │       │       ├── S7
+│   │       │       ├── salesforcer
+│   │       │       ├── sass
+│   │       │       ├── scales
+│   │       │       ├── selectr
+│   │       │       ├── stringi
+│   │       │       ├── stringr
+│   │       │       ├── sys
+│   │       │       ├── systemfonts
+│   │       │       ├── textshaping
+│   │       │       ├── tibble
+│   │       │       ├── tidyr
+│   │       │       ├── tidyselect
+│   │       │       ├── tidyverse
+│   │       │       ├── timechange
+│   │       │       ├── tinytex
+│   │       │       ├── tzdb
+│   │       │       ├── utf8
+│   │       │       ├── uuid
+│   │       │       ├── vctrs
+│   │       │       ├── viridisLite
+│   │       │       ├── vroom
+│   │       │       ├── webexercises
+│   │       │       ├── withr
+│   │       │       ├── xfun
+│   │       │       ├── XML
+│   │       │       ├── xml2
+│   │       │       ├── yaml
+│   │       │       └── zip
+│   │       └── R-4.6
+│   │           └── x86_64-w64-mingw32
+│   │               ├── base64enc
+│   │               ├── bookdown
+│   │               ├── boot
+│   │               ├── bslib
+│   │               ├── cachem
+│   │               ├── class
+│   │               ├── cli
+│   │               ├── cluster
+│   │               ├── codetools
+│   │               ├── crosstalk
+│   │               ├── digest
+│   │               ├── DT
+│   │               ├── evaluate
+│   │               ├── fastmap
+│   │               ├── fontawesome
+│   │               ├── foreign
+│   │               ├── fs
+│   │               ├── glue
+│   │               ├── highr
+│   │               ├── htmltools
+│   │               ├── htmlwidgets
+│   │               ├── jquerylib
+│   │               ├── jsonlite
+│   │               ├── KernSmooth
+│   │               ├── knitr
+│   │               ├── later
+│   │               ├── lattice
+│   │               ├── lazyeval
+│   │               ├── lifecycle
+│   │               ├── magrittr
+│   │               ├── MASS
+│   │               ├── Matrix
+│   │               ├── memoise
+│   │               ├── mgcv
+│   │               ├── mime
+│   │               ├── nlme
+│   │               ├── nnet
+│   │               ├── otel
+│   │               ├── promises
+│   │               ├── R6
+│   │               ├── rappdirs
+│   │               ├── Rcpp
+│   │               ├── renv
+│   │               │   ├── bin
+│   │               │   │   ├── renv
+│   │               │   │   └── renv.bat
+│   │               │   ├── config.yml
+│   │               │   ├── DESCRIPTION
+│   │               │   ├── doc
+│   │               │   │   ├── ci.html
+│   │               │   │   ├── ci.R
+│   │               │   │   ├── ci.Rmd
+│   │               │   │   ├── docker.html
+│   │               │   │   ├── docker.R
+│   │               │   │   ├── docker.Rmd
+│   │               │   │   ├── faq.html
+│   │               │   │   ├── faq.R
+│   │               │   │   ├── faq.Rmd
+│   │               │   │   ├── index.html
+│   │               │   │   ├── package-install.html
+│   │               │   │   ├── package-install.R
+│   │               │   │   ├── package-install.Rmd
+│   │               │   │   ├── package-sources.html
+│   │               │   │   ├── package-sources.R
+│   │               │   │   ├── package-sources.Rmd
+│   │               │   │   ├── packages.html
+│   │               │   │   ├── packages.R
+│   │               │   │   ├── packages.Rmd
+│   │               │   │   ├── packrat.html
+│   │               │   │   ├── packrat.R
+│   │               │   │   ├── packrat.Rmd
+│   │               │   │   ├── profiles.html
+│   │               │   │   ├── profiles.R
+│   │               │   │   ├── profiles.Rmd
+│   │               │   │   ├── python.html
+│   │               │   │   ├── python.R
+│   │               │   │   ├── python.Rmd
+│   │               │   │   ├── renv.html
+│   │               │   │   ├── renv.R
+│   │               │   │   ├── renv.Rmd
+│   │               │   │   ├── rsconnect.html
+│   │               │   │   ├── rsconnect.R
+│   │               │   │   └── rsconnect.Rmd
+│   │               │   ├── ext
+│   │               │   │   └── renv.c
+│   │               │   ├── help
+│   │               │   │   ├── aliases.rds
+│   │               │   │   ├── AnIndex
+│   │               │   │   ├── figures
+│   │               │   │   │   └── logo.svg
+│   │               │   │   ├── paths.rds
+│   │               │   │   ├── renv.rdb
+│   │               │   │   └── renv.rdx
+│   │               │   ├── html
+│   │               │   │   ├── 00Index.html
+│   │               │   │   └── R.css
+│   │               │   ├── INDEX
+│   │               │   ├── LICENSE
+│   │               │   ├── MD5
+│   │               │   ├── Meta
+│   │               │   │   ├── features.rds
+│   │               │   │   ├── hsearch.rds
+│   │               │   │   ├── links.rds
+│   │               │   │   ├── nsInfo.rds
+│   │               │   │   ├── package.rds
+│   │               │   │   ├── Rd.rds
+│   │               │   │   └── vignette.rds
+│   │               │   ├── NAMESPACE
+│   │               │   ├── NEWS.md
+│   │               │   ├── R
+│   │               │   │   ├── renv
+│   │               │   │   ├── renv.rdb
+│   │               │   │   └── renv.rdx
+│   │               │   ├── README.md
+│   │               │   ├── repos
+│   │               │   │   └── src
+│   │               │   │       └── contrib
+│   │               │   │           ├── PACKAGES
+│   │               │   │           ├── PACKAGES.gz
+│   │               │   │           ├── PACKAGES.rds
+│   │               │   │           └── renv_1.2.2.tar.gz
+│   │               │   ├── resources
+│   │               │   │   ├── activate.R
+│   │               │   │   ├── scripts-git-askpass.cmd
+│   │               │   │   ├── scripts-git-askpass.sh
+│   │               │   │   ├── vendor
+│   │               │   │   │   └── renv.R
+│   │               │   │   ├── watchdog-process.R
+│   │               │   │   └── WELCOME
+│   │               │   ├── rstudio
+│   │               │   │   └── addins.dcf
+│   │               │   ├── schema
+│   │               │   │   └── draft-07.renv.lock.schema.json
+│   │               │   └── sysreqs
+│   │               │       └── sysreqs.json
+│   │               ├── rlang
+│   │               ├── rmarkdown
+│   │               ├── rpart
+│   │               ├── rstudioapi
+│   │               ├── sass
+│   │               ├── spatial
+│   │               ├── stringi
+│   │               ├── stringr
+│   │               ├── survival
+│   │               ├── tinytex
+│   │               ├── vctrs
+│   │               ├── webexercises
+│   │               ├── xfun
+│   │               └── yaml
+│   ├── settings.json
+│   └── staging
+│       └── 1
+│           ├── backports
+│           └── base64enc
+├── renv.lock
+├── saleforce_ing_inversa.Rproj
+├── style.css
+├── _book
+│   ├── 404.html
+│   ├── admin-certification.html
+│   ├── blocks.html
+│   ├── cross.html
+│   ├── describemetadataresult.html
+│   ├── footnotes-and-citations.html
+│   ├── hello-bookdown.html
+│   ├── images
+│   │   ├── clipboard-1155832598.png
+│   │   ├── clipboard-1195863881.png
+│   │   ├── clipboard-1332188265.png
+│   │   ├── clipboard-2122138464.png
+│   │   ├── clipboard-2380794441.png
+│   │   ├── clipboard-2599466062.png
+│   │   ├── clipboard-3730263570.png
+│   │   ├── clipboard-3841169795.png
+│   │   ├── clipboard-4160741659.png
+│   │   ├── dar_version_arq.png
+│   │   ├── Diagrama_Base.png
+│   │   └── ESTADO_DEL_ARTE.svg
+│   ├── include
+│   │   └── webex.css
+│   ├── index.html
+│   ├── lenguaje-r.html
+│   ├── libs
+│   │   ├── anchor-sections-1.1.0
+│   │   │   ├── anchor-sections-hash.css
+│   │   │   ├── anchor-sections.css
+│   │   │   └── anchor-sections.js
+│   │   ├── crosstalk-1.2.2
+│   │   │   ├── css
+│   │   │   │   └── crosstalk.min.css
+│   │   │   └── js
+│   │   │       └── crosstalk.min.js
+│   │   ├── datatables-binding-0.34.0
+│   │   │   └── datatables.js
+│   │   ├── datatables-css-0.0.0
+│   │   │   └── datatables-crosstalk.css
+│   │   ├── dt-core-1.13.6
+│   │   │   ├── css
+│   │   │   │   ├── jquery.dataTables.extra.css
+│   │   │   │   └── jquery.dataTables.min.css
+│   │   │   └── js
+│   │   │       └── jquery.dataTables.min.js
+│   │   ├── gitbook-2.6.7
+│   │   │   ├── css
+│   │   │   │   ├── fontawesome
+│   │   │   │   │   └── fontawesome-webfont.ttf
+│   │   │   │   ├── plugin-bookdown.css
+│   │   │   │   ├── plugin-clipboard.css
+│   │   │   │   ├── plugin-fontsettings.css
+│   │   │   │   ├── plugin-highlight.css
+│   │   │   │   ├── plugin-search.css
+│   │   │   │   ├── plugin-table.css
+│   │   │   │   └── style.css
+│   │   │   └── js
+│   │   │       ├── app.min.js
+│   │   │       ├── clipboard.min.js
+│   │   │       ├── jquery.highlight.js
+│   │   │       ├── plugin-bookdown.js
+│   │   │       ├── plugin-clipboard.js
+│   │   │       ├── plugin-fontsettings.js
+│   │   │       ├── plugin-search.js
+│   │   │       └── plugin-sharing.js
+│   │   ├── htmltools-fill-0.5.8.1
+│   │   │   └── fill.css
+│   │   ├── htmlwidgets-1.6.4
+│   │   │   └── htmlwidgets.js
+│   │   ├── jquery-3.6.0
+│   │   │   └── jquery-3.6.0.min.js
+│   │   ├── nouislider-7.0.10
+│   │   │   ├── jquery.nouislider.min.css
+│   │   │   └── jquery.nouislider.min.js
+│   │   └── selectize-0.12.0
+│   │       ├── selectize.bootstrap3.css
+│   │       └── selectize.min.js
+│   ├── parts.html
+│   ├── reference-keys.txt
+│   ├── references.html
+│   ├── retrieve.html
+│   ├── salesforce-1.html
+│   ├── salesforce.html
+│   ├── search_index.json
+│   ├── setup-1.html
+│   ├── setup.html
+│   ├── sharing-your-book.html
+│   ├── style.css
+│   └── _main_files
+│       └── figure-html
+│           └── nice-fig-1.png
+├── _bookdown.yml
+├── _bookdown_files
+├── _logicafuente.Rmd
+├── _main_files
+│   └── figure-html
+│       └── nice-fig-1.png
+└── _output.yml
