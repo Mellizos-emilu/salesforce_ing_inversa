@@ -182,6 +182,7 @@ datatable(df_ApexClass,
 ```
 
 Mostrar el visor de código para ver las clases aquí mismo:
+
 ```{r visor-vscode-lineas, echo=FALSE, warning=FALSE, message=FALSE}
 library(htmltools)
 library(jsonlite)
@@ -199,7 +200,7 @@ contenido_codigos <- sapply(archivos_cls, function(x) paste(readLines(x, warn = 
 # 4. Convertir a JSON de forma segura
 json_codigos <- as.character(toJSON(as.list(setNames(contenido_codigos, nombres_cls)), auto_unbox = TRUE))
 
-# 5. Items de la lista HTML (Panel izquierdo)
+# 5. Items de la lista HTML
 html_items <- paste0(
   "<div class='item-clase' onclick=\"actualizarVisor('", nombres_cls, "')\" ",
   "style='padding: 8px 15px; color: #cccccc; font-size: 13px; cursor: pointer; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; border-bottom: 1px solid #333;' ",
@@ -226,23 +227,16 @@ html_completo <- paste0('
   </div>
 
   <div style="flex: 1; background-color: #1e1e1e; display: flex; flex-direction: column; overflow: hidden;">
-    
     <div style="padding: 10px 15px; background-color: #2d2d2d; color: #858585; font-size: 13px; border-bottom: 1px solid #1e1e1e;">
       <span id="titulo-archivo" style="font-family: Consolas, monospace;">Selecciona un archivo para ver su código...</span>
     </div>
     
-    <div style="flex: 1; overflow: auto; background-color: #1e1e1e;">
-      <div style="display: flex; padding: 15px; min-width: max-content;">
-        
-        <div id="numeros-linea" style="padding-right: 15px; margin-right: 15px; text-align: right; color: #6e7681; font-family: Consolas, monospace; font-size: 13px; line-height: 1.5; border-right: 1px solid #404040; user-select: none; white-space: pre;">1\n2\n3\n4</div>
-
-        <pre style="margin: 0; background: transparent; border: none; padding: 0; flex: 1;"><code id="visor-codigo" style="color: #d4d4d4; font-family: Consolas, monospace; font-size: 13px; white-space: pre; line-height: 1.5;">/*
-* 1. Haz clic en cualquier clase del panel izquierdo.
-* 2. Usa la barra de búsqueda superior para filtrar la lista rápidamente.
-*/</code></pre>
+    <div id="visor-codigo" style="flex: 1; overflow: auto; padding: 15px 0; background-color: #1e1e1e; font-family: Consolas, monospace; font-size: 13px;">
+      <div style="display: flex; line-height: 1.5;">
+        <div style="min-width: 40px; text-align: right; padding-right: 15px; color: #6e7681; user-select: none; border-right: 1px solid #404040; margin-right: 15px;">1</div>
+        <div style="white-space: pre; color: #d4d4d4;">/* Haz clic en cualquier clase del panel izquierdo. */</div>
       </div>
     </div>
-
   </div>
 
 </div>
@@ -263,24 +257,32 @@ json_codigos,
   function actualizarVisor(nombreArchivo) {
     var visor = document.getElementById("visor-codigo");
     var titulo = document.getElementById("titulo-archivo");
-    var numeros = document.getElementById("numeros-linea");
     
     if (diccCodigos[nombreArchivo]) {
       var textoCodigo = diccCodigos[nombreArchivo];
       
-      // 1. Inyectar el código fuente
-      visor.textContent = textoCodigo;
-      
-      // 2. Actualizar el Breadcrumb del título
+      // Actualizar el Breadcrumb del título
       titulo.innerHTML = "<span style=\'color: #4a90e2;\'>classes / </span><span style=\'color: #cccccc;\'>" + nombreArchivo + "</span>";
       
-      // 3. Calcular y generar los números de línea dinámicamente
+      // Construir línea por línea para asegurar alineación
       var lineas = textoCodigo.split(/\\r?\\n/);
-      var htmlNumeros = "";
-      for(var i = 1; i <= lineas.length; i++) {
-        htmlNumeros += i + "\\n";
+      var htmlFinal = "";
+      
+      for(var i = 0; i < lineas.length; i++) {
+        // 1. Escapar caracteres HTML para no perder <Account>
+        var lineaLimpia = lineas[i].replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
+        
+        // 2. Si la línea está vacía, agregamos un espacio para que no colapse su altura
+        if (lineaLimpia === "") lineaLimpia = " "; 
+        
+        // 3. Crear la fila con su número y su código atados juntos
+        htmlFinal += "<div style=\'display: flex; line-height: 1.5;\'>" +
+                       "<div style=\'min-width: 40px; text-align: right; padding-right: 15px; color: #6e7681; user-select: none; border-right: 1px solid #404040; margin-right: 15px;\'>" + (i + 1) + "</div>" +
+                       "<div style=\'white-space: pre; color: #d4d4d4;\'>" + lineaLimpia + "</div>" +
+                     "</div>";
       }
-      numeros.textContent = htmlNumeros;
+      
+      visor.innerHTML = htmlFinal;
     }
   }
 
@@ -303,6 +305,7 @@ json_codigos,
 # Renderizar HTML
 HTML(html_completo)
 ```
+
 
 ## lwc
 
