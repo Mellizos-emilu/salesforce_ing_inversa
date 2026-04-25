@@ -58,7 +58,7 @@ set in the _output.yml file.</p>" />
 <link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
 <link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
 <script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
-<link href="libs/htmltools-fill-0.5.8.1/fill.css" rel="stylesheet" />
+<link href="libs/htmltools-fill-0.5.9/fill.css" rel="stylesheet" />
 <script src="libs/htmlwidgets-1.6.4/htmlwidgets.js"></script>
 <link href="libs/datatables-css-0.0.0/datatables-crosstalk.css" rel="stylesheet" />
 <script src="libs/datatables-binding-0.34.0/datatables.js"></script>
@@ -249,39 +249,39 @@ div.csl-indent {
 <h1><span class="header-section-number">5</span> Retrieve<a href="retrieve.html#retrieve" class="anchor-section" aria-label="Anchor link to header"></a></h1>
 <div id="lwc-1" class="section level2 hasAnchor" number="5.1">
 <h2><span class="header-section-number">5.1</span> lwc<a href="retrieve.html#lwc-1" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<div class="sourceCode" id="cb17"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb17-1"><a href="retrieve.html#cb17-1" tabindex="-1"></a>retrieve_request <span class="ot">&lt;-</span> <span class="fu">list</span>(</span>
-<span id="cb17-2"><a href="retrieve.html#cb17-2" tabindex="-1"></a>  <span class="at">unpackaged =</span> <span class="fu">list</span>(</span>
-<span id="cb17-3"><a href="retrieve.html#cb17-3" tabindex="-1"></a>    <span class="co"># Primer bloque de tipos</span></span>
-<span id="cb17-4"><a href="retrieve.html#cb17-4" tabindex="-1"></a>    <span class="at">types =</span> <span class="fu">list</span>(</span>
-<span id="cb17-5"><a href="retrieve.html#cb17-5" tabindex="-1"></a>      <span class="at">members =</span> <span class="st">&#39;*&#39;</span>,</span>
-<span id="cb17-6"><a href="retrieve.html#cb17-6" tabindex="-1"></a>      <span class="at">name =</span> <span class="st">&#39;LightningComponentBundle&#39;</span></span>
-<span id="cb17-7"><a href="retrieve.html#cb17-7" tabindex="-1"></a>    ),</span>
-<span id="cb17-8"><a href="retrieve.html#cb17-8" tabindex="-1"></a>    <span class="co"># Segundo bloque de tipos (Nota cómo repetimos el nombre &quot;types =&quot;)</span></span>
-<span id="cb17-9"><a href="retrieve.html#cb17-9" tabindex="-1"></a>    <span class="at">types =</span> <span class="fu">list</span>(</span>
-<span id="cb17-10"><a href="retrieve.html#cb17-10" tabindex="-1"></a>      <span class="at">members =</span> <span class="st">&#39;*&#39;</span>,</span>
-<span id="cb17-11"><a href="retrieve.html#cb17-11" tabindex="-1"></a>      <span class="at">name =</span> <span class="st">&#39;ApexClass&#39;</span></span>
-<span id="cb17-12"><a href="retrieve.html#cb17-12" tabindex="-1"></a>    ),</span>
-<span id="cb17-13"><a href="retrieve.html#cb17-13" tabindex="-1"></a>    <span class="co"># Tercer bloque de tipos</span></span>
-<span id="cb17-14"><a href="retrieve.html#cb17-14" tabindex="-1"></a>    <span class="at">types =</span> <span class="fu">list</span>(</span>
-<span id="cb17-15"><a href="retrieve.html#cb17-15" tabindex="-1"></a>      <span class="at">members =</span> <span class="st">&#39;*&#39;</span>,</span>
-<span id="cb17-16"><a href="retrieve.html#cb17-16" tabindex="-1"></a>      <span class="at">name =</span> <span class="st">&#39;AuraDefinitionBundle&#39;</span></span>
-<span id="cb17-17"><a href="retrieve.html#cb17-17" tabindex="-1"></a>    ),</span>
-<span id="cb17-18"><a href="retrieve.html#cb17-18" tabindex="-1"></a>    <span class="co"># Finalmente, la versión</span></span>
-<span id="cb17-19"><a href="retrieve.html#cb17-19" tabindex="-1"></a>    <span class="at">version =</span> <span class="st">&quot;64.0&quot;</span></span>
-<span id="cb17-20"><a href="retrieve.html#cb17-20" tabindex="-1"></a>  )</span>
-<span id="cb17-21"><a href="retrieve.html#cb17-21" tabindex="-1"></a>)</span>
-<span id="cb17-22"><a href="retrieve.html#cb17-22" tabindex="-1"></a></span>
-<span id="cb17-23"><a href="retrieve.html#cb17-23" tabindex="-1"></a><span class="do">### LLAMADO AL RETRIEVE</span></span>
-<span id="cb17-24"><a href="retrieve.html#cb17-24" tabindex="-1"></a>retrieve_info <span class="ot">&lt;-</span> <span class="fu">sf_retrieve_metadata</span>(</span>
-<span id="cb17-25"><a href="retrieve.html#cb17-25" tabindex="-1"></a>    <span class="at">retrieve_request =</span> retrieve_request,</span>
-<span id="cb17-26"><a href="retrieve.html#cb17-26" tabindex="-1"></a>    <span class="at">filename =</span> <span class="st">&quot;package.zip&quot;</span>, </span>
-<span id="cb17-27"><a href="retrieve.html#cb17-27" tabindex="-1"></a>    <span class="at">verbose =</span> <span class="cn">TRUE</span></span>
-<span id="cb17-28"><a href="retrieve.html#cb17-28" tabindex="-1"></a>)</span>
-<span id="cb17-29"><a href="retrieve.html#cb17-29" tabindex="-1"></a></span>
-<span id="cb17-30"><a href="retrieve.html#cb17-30" tabindex="-1"></a><span class="fu">unzip</span>(</span>
-<span id="cb17-31"><a href="retrieve.html#cb17-31" tabindex="-1"></a>  <span class="at">zipfile =</span> <span class="st">&quot;package.zip&quot;</span>,</span>
-<span id="cb17-32"><a href="retrieve.html#cb17-32" tabindex="-1"></a>  <span class="at">exdir =</span> <span class="st">&quot;codigofuente/&quot;</span></span>
-<span id="cb17-33"><a href="retrieve.html#cb17-33" tabindex="-1"></a>)</span></code></pre></div>
+<div class="sourceCode" id="cb14"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb14-1"><a href="retrieve.html#cb14-1" tabindex="-1"></a>retrieve_request <span class="ot">&lt;-</span> <span class="fu">list</span>(</span>
+<span id="cb14-2"><a href="retrieve.html#cb14-2" tabindex="-1"></a>  <span class="at">unpackaged =</span> <span class="fu">list</span>(</span>
+<span id="cb14-3"><a href="retrieve.html#cb14-3" tabindex="-1"></a>    <span class="co"># Primer bloque de tipos</span></span>
+<span id="cb14-4"><a href="retrieve.html#cb14-4" tabindex="-1"></a>    <span class="at">types =</span> <span class="fu">list</span>(</span>
+<span id="cb14-5"><a href="retrieve.html#cb14-5" tabindex="-1"></a>      <span class="at">members =</span> <span class="st">&#39;*&#39;</span>,</span>
+<span id="cb14-6"><a href="retrieve.html#cb14-6" tabindex="-1"></a>      <span class="at">name =</span> <span class="st">&#39;LightningComponentBundle&#39;</span></span>
+<span id="cb14-7"><a href="retrieve.html#cb14-7" tabindex="-1"></a>    ),</span>
+<span id="cb14-8"><a href="retrieve.html#cb14-8" tabindex="-1"></a>    <span class="co"># Segundo bloque de tipos (Nota cómo repetimos el nombre &quot;types =&quot;)</span></span>
+<span id="cb14-9"><a href="retrieve.html#cb14-9" tabindex="-1"></a>    <span class="at">types =</span> <span class="fu">list</span>(</span>
+<span id="cb14-10"><a href="retrieve.html#cb14-10" tabindex="-1"></a>      <span class="at">members =</span> <span class="st">&#39;*&#39;</span>,</span>
+<span id="cb14-11"><a href="retrieve.html#cb14-11" tabindex="-1"></a>      <span class="at">name =</span> <span class="st">&#39;ApexClass&#39;</span></span>
+<span id="cb14-12"><a href="retrieve.html#cb14-12" tabindex="-1"></a>    ),</span>
+<span id="cb14-13"><a href="retrieve.html#cb14-13" tabindex="-1"></a>    <span class="co"># Tercer bloque de tipos</span></span>
+<span id="cb14-14"><a href="retrieve.html#cb14-14" tabindex="-1"></a>    <span class="at">types =</span> <span class="fu">list</span>(</span>
+<span id="cb14-15"><a href="retrieve.html#cb14-15" tabindex="-1"></a>      <span class="at">members =</span> <span class="st">&#39;*&#39;</span>,</span>
+<span id="cb14-16"><a href="retrieve.html#cb14-16" tabindex="-1"></a>      <span class="at">name =</span> <span class="st">&#39;AuraDefinitionBundle&#39;</span></span>
+<span id="cb14-17"><a href="retrieve.html#cb14-17" tabindex="-1"></a>    ),</span>
+<span id="cb14-18"><a href="retrieve.html#cb14-18" tabindex="-1"></a>    <span class="co"># Finalmente, la versión</span></span>
+<span id="cb14-19"><a href="retrieve.html#cb14-19" tabindex="-1"></a>    <span class="at">version =</span> <span class="st">&quot;64.0&quot;</span></span>
+<span id="cb14-20"><a href="retrieve.html#cb14-20" tabindex="-1"></a>  )</span>
+<span id="cb14-21"><a href="retrieve.html#cb14-21" tabindex="-1"></a>)</span>
+<span id="cb14-22"><a href="retrieve.html#cb14-22" tabindex="-1"></a></span>
+<span id="cb14-23"><a href="retrieve.html#cb14-23" tabindex="-1"></a><span class="do">### LLAMADO AL RETRIEVE</span></span>
+<span id="cb14-24"><a href="retrieve.html#cb14-24" tabindex="-1"></a>retrieve_info <span class="ot">&lt;-</span> <span class="fu">sf_retrieve_metadata</span>(</span>
+<span id="cb14-25"><a href="retrieve.html#cb14-25" tabindex="-1"></a>    <span class="at">retrieve_request =</span> retrieve_request,</span>
+<span id="cb14-26"><a href="retrieve.html#cb14-26" tabindex="-1"></a>    <span class="at">filename =</span> <span class="st">&quot;package.zip&quot;</span>, </span>
+<span id="cb14-27"><a href="retrieve.html#cb14-27" tabindex="-1"></a>    <span class="at">verbose =</span> <span class="cn">TRUE</span></span>
+<span id="cb14-28"><a href="retrieve.html#cb14-28" tabindex="-1"></a>)</span>
+<span id="cb14-29"><a href="retrieve.html#cb14-29" tabindex="-1"></a></span>
+<span id="cb14-30"><a href="retrieve.html#cb14-30" tabindex="-1"></a><span class="fu">unzip</span>(</span>
+<span id="cb14-31"><a href="retrieve.html#cb14-31" tabindex="-1"></a>  <span class="at">zipfile =</span> <span class="st">&quot;package.zip&quot;</span>,</span>
+<span id="cb14-32"><a href="retrieve.html#cb14-32" tabindex="-1"></a>  <span class="at">exdir =</span> <span class="st">&quot;codigofuente/&quot;</span></span>
+<span id="cb14-33"><a href="retrieve.html#cb14-33" tabindex="-1"></a>)</span></code></pre></div>
 
 </div>
 </div>
